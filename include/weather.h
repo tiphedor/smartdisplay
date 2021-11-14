@@ -4,6 +4,7 @@
 #include <ArduinoJson.h>
 #include "espNetwork.h"
 #include "config.h"
+#include "secrets.h"
 
 typedef struct s_currentWeather {
 	float currentTemp;

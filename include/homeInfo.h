@@ -1,6 +1,8 @@
 #pragma once 
 
+#include <ArduinoJson.h>
 #include "espNetwork.h"
+#include "secrets.h"
 
 typedef struct s_homeinfo {
 	float livingRoomCurrentTemp;

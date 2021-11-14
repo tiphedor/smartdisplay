@@ -16,5 +16,5 @@
 #define MAX(a,b) (((a)>(b))?(a):(b))
 
 void drawCenteredText(char *text, int containerWidth, int offset, int y, sFONT *font, int inverted);
-void drawGraph(int startYPostion, int startXPosition, int graphHeight, int graphWidth, int numberOfSubdivision, s_currentWeather weather);
+void drawGraph(int startYPostion, int startXPosition, int graphHeight, int graphWidth, int numberOfSubdivision, s_currentWeather weather, struct tm timeinfo);
 void drawHomeStatus(s_homeinfo homeInfo);

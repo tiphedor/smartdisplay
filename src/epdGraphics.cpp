@@ -1,7 +1,6 @@
 #include "epdGraphics.h"
 
 void drawCenteredText(char *text, int containerWidth, int offset, int y, sFONT *font, int inverted) {
-	// todo: font size
 	int fontWidthPerChar = (*font).Width;
     unsigned int foregroundColor = inverted ? WHITE : BLACK;
     unsigned int backgroundColor = inverted ? BLACK : WHITE;
@@ -17,7 +16,8 @@ void drawGraph(
 	int graphHeight,
 	int graphWidth,
 	int numberOfSubdivision,
-    s_currentWeather weather
+    s_currentWeather weather,
+	struct tm timeinfo
 ) {
     char daysOfWeek[7][4] =	{ "dim", "lun", "mar", "mer", "jeu", "ven", "sam" };
     
@@ -53,10 +53,8 @@ void drawGraph(
 	int previousPointYMin = -1;
     int previousPointYMax = -1;
 
-	struct tm timeinfo;
-	getLocalTime(&timeinfo);
-	int startDay = timeinfo.tm_wday;
 
+	int startDay = timeinfo.tm_wday;
 	for (int i = 0; i < numberOfValues; i++) {
         int scaledMinValue = map(weather.dailyMinTemp[i], minValue, maxValue, 0, graphHeight);
         int scaledMaxValue = map(weather.dailyMaxTemp[i], minValue, maxValue, 0, graphHeight);
@@ -120,6 +118,7 @@ void drawHomeStatus(s_homeinfo homeInfo) {
 	drawCenteredText("bureau", 	SCREEN_WIDTH / 3, (2 * SCREEN_WIDTH) / 3, 290, &consolas_32pt, homeInfo.officeHeatingStatus);
 	drawCenteredText(buffer, SCREEN_WIDTH / 3, (2 * SCREEN_WIDTH) / 3, 350, &consolas_28pt, homeInfo.officeHeatingStatus);
 
+	// Boxes
 	Paint_DrawLine(0, 285, SCREEN_WIDTH, 285, BLACK, DOT_PIXEL_1X1, LINE_STYLE_SOLID);
 	Paint_DrawLine(SCREEN_WIDTH / 3, 285, SCREEN_WIDTH / 3, SCREEN_HEIGHT, BLACK, DOT_PIXEL_1X1, LINE_STYLE_SOLID);
 	Paint_DrawLine((2 * SCREEN_WIDTH) / 3, 285, (2 * SCREEN_WIDTH) / 3, SCREEN_HEIGHT, BLACK, DOT_PIXEL_1X1, LINE_STYLE_SOLID);

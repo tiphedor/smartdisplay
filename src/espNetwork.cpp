@@ -8,10 +8,10 @@ String httpGetCall(char *url) {
 	return http.getString();
 }
 
-String httpAuthorizedGetCall(char *url) {
+String httpAuthorizedGetCall(char *url, char *token) {
 	HTTPClient http;
 	http.begin(url);
-	http.addHeader("Authorization", AUTHORIZATION_BEARER);
+	http.addHeader("Authorization", token);
 	int httpResponseCode = http.GET();
 
 	return http.getString();
