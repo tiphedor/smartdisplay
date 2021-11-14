@@ -1,5 +1,4 @@
-#ifndef _config_h_
-#define _config_h_
+#pragma once 
 
 #define SCREEN_WIDTH 	    640
 #define SCREEN_HEIGHT 	    384
@@ -9,5 +8,3 @@
 #define NTP_SERVER          "pool.ntp.org"
 #define GMT_OFFSET_SEC      3600
 #define DAYLIGHT_OFFSET_SEC 3600
-
-#endif

@@ -1,5 +1,4 @@
-#ifndef _network_h_
-#define _network_h_
+#pragma once 
 
 #include <Arduino.h>
 #include <stdlib.h>
@@ -10,5 +9,3 @@
 
 String httpGetCall(char *url);
 void wifiConnect();
-
-#endif

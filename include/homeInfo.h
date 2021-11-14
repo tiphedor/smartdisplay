@@ -1,5 +1,4 @@
-#ifndef _homeinfo_h_
-#define _homeinfo_h_
+#pragma once 
 
 #include "espNetwork.h"
 
@@ -18,5 +17,3 @@ typedef struct s_homeinfo {
 } s_homeinfo;
 
 s_homeinfo fetchHomeInfo();
-
-#endif

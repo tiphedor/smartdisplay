@@ -1,5 +1,4 @@
 #include "DEV_Config.h"
-#include "espNetwork.h"
 #include "config.h"
 #include "EPD.h"
 #include "GUI_Paint.h"
@@ -43,7 +42,6 @@ void setup() {
 		5, // numberOfSubdivision
 		weather
 	);
-
 	drawHomeStatus(homeInfo);
 
 	EPD_7IN5_Display(Image);

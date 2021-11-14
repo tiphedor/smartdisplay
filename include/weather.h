@@ -1,5 +1,4 @@
-#ifndef _weather_h_
-#define _weather_h_
+#pragma once
 
 #include <stdlib.h>
 #include <ArduinoJson.h>
@@ -15,5 +14,3 @@ typedef struct s_currentWeather {
 } s_currentWeather;
 
 s_currentWeather fetchCurrentWeather();
-
-#endif
